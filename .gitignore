@@ -1,6 +1,7 @@
 # User-specific configuration
 config.yaml
 .env
+szurubooru/
 
 # Client Development Artifacts
 */*_modules/

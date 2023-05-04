@@ -31,7 +31,9 @@ const external_js = [
 ];
 
 const app_manifest = {
-    name: 'szurubooru',
+    short_name: "FTBooru",
+    name: 'FeedTheBooru',
+    description: "The Modded Minecraft Booru",
     icons: [
         {
             src: baseUrl() + 'img/android-chrome-192x192.png',
@@ -42,11 +44,24 @@ const app_manifest = {
             src: baseUrl() + 'img/android-chrome-512x512.png',
             type: 'image/png',
             sizes: '512x512'
+        },
+        {
+            src: "img/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable" // <-- New property value `"maskable"`
+        },
+        {
+            src: "img/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable" // <-- New property value `"maskable"`
         }
     ],
+    id: baseUrl(),
     start_url: baseUrl(),
     theme_color: '#24aadd',
-    background_color: '#ffffff',
+    background_color: '#24aadd',
     display: 'standalone'
 }
 
@@ -245,7 +260,7 @@ function bundleBinaryAssets() {
     fs.copyFileSync('./img/favicon.png', './public/img/favicon.png');
     console.info('Copied images');
 
-    fs.copyFileSync('./fonts/open_sans.woff2', './public/fonts/open_sans.woff2')
+    fs.copyFileSync('./fonts/Minecraft-Regular.woff2', './public/fonts/open_sans.woff2')
     for (let file of glob.sync('./node_modules/font-awesome/fonts/*.*')) {
         if (fs.lstatSync(file).isDirectory()) {
             continue;
