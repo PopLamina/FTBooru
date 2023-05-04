@@ -24,15 +24,11 @@
                 }) %>
             </li>
             <li>
-                <%= ctx.makeEmailInput({
-                    text: 'Email',
-                    name: 'email',
+                <%= ctx.makeMcnameInput({
+                    text: 'Minecraft Username',
+                    name: 'mcname',
                     placeholder: 'optional',
                 }) %>
-                <p class='hint'>
-                    Used for password reminder and to show a <a href='http://gravatar.com/'>Gravatar</a>.
-                    Leave blank for random Gravatar.
-                </p>
             </li>
         </ul>
 
