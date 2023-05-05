@@ -27,7 +27,7 @@ class UserRegistrationController {
         this._view.disableForm();
         const user = new User();
         user.name = e.detail.name;
-        user.mcname = e.detail.mcname;
+        user.email = e.detail.email;
         user.password = e.detail.password;
         const isLoggedIn = api.isLoggedIn();
         user.save()

@@ -24,7 +24,7 @@ services:
       #LOG_SQL: 0 (1 for verbose SQL logs)
       THREADS:
     volumes:
-      - "$PWD/szurubooru/data:/data"
+      - "/root/FTBooru/storage/data:/data"
       - "./server/config.yaml:/opt/app/config.yaml"
 
   client:
@@ -38,7 +38,7 @@ services:
       BACKEND_HOST: server
       BASE_URL:
     volumes:
-      - "$PWD/szurubooru/data:/data:ro"
+      - "/root/FTBooru/storage/data:/data:ro"
     ports:
       - "${PORT}:80"
 
@@ -49,4 +49,4 @@ services:
       POSTGRES_USER:
       POSTGRES_PASSWORD:
     volumes:
-      - "$PWD/szurubooru/sql:/var/lib/postgresql/data"
+      - "/root/FTBooru/storage/sql:/var/lib/postgresql/data"

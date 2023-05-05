@@ -82,8 +82,8 @@ class UserController {
                     canEditPassword: api.hasPrivilege(
                         `users:edit:${infix}:pass`
                     ),
-                    canEditMcname: api.hasPrivilege(
-                        `users:edit:${infix}:mcname`
+                    canEditEmail: api.hasPrivilege(
+                        `users:edit:${infix}:email`
                     ),
                     canEditRank: api.hasPrivilege(`users:edit:${infix}:rank`),
                     canEditAvatar: api.hasPrivilege(
@@ -178,8 +178,8 @@ class UserController {
         if (e.detail.name !== undefined) {
             e.detail.user.name = e.detail.name;
         }
-        if (e.detail.mcname !== undefined) {
-            e.detail.user.mcname = e.detail.mcname;
+        if (e.detail.email !== undefined) {
+            e.detail.user.email = e.detail.email;
         }
         if (e.detail.rank !== undefined) {
             e.detail.user.rank = e.detail.rank;
